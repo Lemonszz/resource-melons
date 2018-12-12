@@ -1,0 +1,9 @@
+{
+  "type": "smelting",
+  "ingredient": {
+    "item": "resourcemelons:lapis_slice"
+  },
+  "result": "minecraft:lapis_lazuli",
+  "experience": 0.7,
+  "cookingtime": 200
+}
