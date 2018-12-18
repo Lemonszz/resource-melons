@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "resourcemelons:iron_slice"
+        }
+    },
+    "result": {
+        "item": "resourcemelons:iron_melon",
+        "count": 1
+    }
+}

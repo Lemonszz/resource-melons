@@ -7,7 +7,7 @@ import net.minecraft.block.*;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Facing;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
@@ -54,7 +54,7 @@ public class ResourceStemBlock extends StemBlock
 				}
 				else
 				{
-					Facing facing = Facing.class_2353.HORIZONTAL.random(random);
+					Direction facing = Direction.class_2353.HORIZONTAL.random(random);
 					BlockPos melonPos = pos.offset(facing);
 					Block melonSoilBlock = world.getBlockState(melonPos.down()).getBlock();
 					if (world.getBlockState(melonPos).isAir() && isValidStone(melonSoilBlock))

@@ -9,7 +9,7 @@ public class ResourceMelonBlock extends GourdBlock
 
 	public ResourceMelonBlock()
 	{
-		super(Block.Settings.create(Material.STONE, MaterialColor.STONE).setStrength(1F, 0F));
+		super(Block.Settings.of(Material.STONE, MaterialColor.STONE).strength(1F, 0F));
 	}
 
 	@Override

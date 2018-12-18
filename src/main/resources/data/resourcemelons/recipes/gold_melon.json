@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "resourcemelons:gold_slice"
+        }
+    },
+    "result": {
+        "item": "resourcemelons:gold_melon",
+        "count": 1
+    }
+}

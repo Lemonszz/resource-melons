@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "resourcemelons:redstone_slice"
+        }
+    },
+    "result": {
+        "item": "resourcemelons:redstone_melon",
+        "count": 1
+    }
+}

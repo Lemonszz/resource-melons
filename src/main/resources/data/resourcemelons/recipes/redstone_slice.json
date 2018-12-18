@@ -1,9 +1,0 @@
-{
-  "type": "smelting",
-  "ingredient": {
-    "item": "resourcemelons:redstone_slice"
-  },
-  "result": "minecraft:redstone",
-  "experience": 0.7,
-  "cookingtime": 200
-}
