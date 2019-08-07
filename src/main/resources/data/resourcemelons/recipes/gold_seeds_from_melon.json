@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "resourcemelons:gold_melon"
+    }
+  ],
+  "result": {
+    "item": "resourcemelons:gold_seeds"
+  }
+}

@@ -2,72 +2,65 @@ package party.lemons.resourcemelons.block;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.world.BlockView;
+import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
 import java.util.Random;
-import java.util.function.Supplier;
 
-public class ResourceStemBlock extends StemBlock
-{
-	private static final int MAX_LIGHT_LEVEL = 7;
+public class ResourceStemBlock extends StemBlock {
 	private static final float BASE_GROW_CHANCE = 25F;
 
-	private Item seed;
+	private Block soil;
+	private Item seeds;
 
-	public ResourceStemBlock(GourdBlock melonBlock)
-	{
-		super(melonBlock, FabricBlockSettings.of(Material.PLANT).collidable(false).ticksRandomly().hardness(0).setSoundGroup(BlockSoundGroup.WOOD).build());
+	public ResourceStemBlock(GourdBlock melonBlock) {
+		super(melonBlock, FabricBlockSettings.of(Material.PLANT).collidable(false).ticksRandomly().hardness(0).sounds(BlockSoundGroup.WOOD).build());
 	}
 
-	public ResourceStemBlock setSeed(Item seed)
-	{
-		this.seed = seed;
+	public ResourceStemBlock setSeeds(Item seeds) {
+		this.seeds = seeds;
+		return this;
+	}
+
+	public ResourceStemBlock setSoil(Block soil) {
+		this.soil = soil;
 		return this;
 	}
 
 	@Environment(EnvType.CLIENT)
-	//middle click block
-	protected Item method_10695()
-	{
-		return seed;
+	@Override
+	protected Item getPickItem() {
+		return seeds;
 	}
 
-	public void scheduledTick(BlockState state, World world, BlockPos pos, Random random)
-	{
-		if (world.method_8624(pos.up(), 0) <= MAX_LIGHT_LEVEL)    //If light level < 7
-		{
-			float growFactor = getGrowthFactor(this, world, pos);
-			if (random.nextInt((int)(BASE_GROW_CHANCE / growFactor) + 1) == 0)
-			{
-				int growthLevel = state.get(field_11584);
-				if (growthLevel < 7)
-				{
-					state = state.with(field_11584, growthLevel + 1);
+	@Override
+	public void onScheduledTick(BlockState state, World world, BlockPos pos, Random random) {
+		if (!world.isSkyVisible(pos.up())) {
+			float growFactor = getGrowthFactor(world, pos);
+			if (random.nextInt((int) (BASE_GROW_CHANCE / growFactor) + 1) == 0) {
+				int growthLevel = state.get(AGE);
+				if (growthLevel < 7) {
+					state = state.with(AGE, growthLevel + 1);
 					world.setBlockState(pos, state, 2);
-				}
-				else
-				{
-					Direction facing = Direction.class_2353.HORIZONTAL.random(random);
+				} else {
+					Direction facing = Direction.Type.HORIZONTAL.random(random);
 					BlockPos melonPos = pos.offset(facing);
 					Block melonSoilBlock = world.getBlockState(melonPos.down()).getBlock();
-					if (world.getBlockState(melonPos).isAir() && isValidStone(melonSoilBlock))
-					{
-						world.setBlockState(melonPos, getMelonBlock().getDefaultState());
-
-						if(world.random.nextInt(4) == 0)
-						{
+					if (world.getBlockState(melonPos).isAir() && isGoodSoil(melonSoilBlock)) {
+						world.setBlockState(melonPos, getGourdBlock().getDefaultState());
+						if (world.random.nextInt(7) == 0) {
 							world.setBlockState(pos, Blocks.AIR.getDefaultState());
-						}
-						else
-						{
-							world.setBlockState(pos, getMelonBlock().method_10680().getDefaultState().with(HorizontalFacingBlock.field_11177, facing));
+						} else {
+							world.setBlockState(pos, getGourdBlock().getAttachedStem().getDefaultState().with(HorizontalFacingBlock.FACING, facing));
 						}
 					}
 				}
@@ -76,63 +69,38 @@ public class ResourceStemBlock extends StemBlock
 		}
 	}
 
-	public static boolean isValidStone(Block block)
-	{
-		return  block == Blocks.STONE ||
-				block == Blocks.DIORITE ||
-				block == Blocks.ANDESITE ||
-				block == Blocks.GRANITE;
+	public boolean isGoodSoil(Block block) {
+		return block.equals(soil);
 	}
 
-	public static float getGrowthFactor(Block block, BlockView world, BlockPos pos)
-	{
+	public float getGrowthFactor(World world, BlockPos pos) {
 		float factor = 1.0F;
+
+		float lightFactor = (15.0F - world.getLightLevel(LightType.SKY, pos.up())) / 10.0F;
+
+		factor += lightFactor;
+
 		BlockPos downPos = pos.down();
 
-		for(int x = -1; x <= 1; ++x)
-		{
-			for(int z = -1; z <= 1; ++z)
-			{
-				float posFactor = 0.0F;
+		float posFactor = -0.5F;
+
+		for (int x = -1; x <= 1; ++x) {
+			for (int z = -1; z <= 1; ++z) {
 				BlockState posState = world.getBlockState(downPos.add(x, 0, z));
-				if (isValidStone(posState.getBlock()))
-				{
-					posFactor = 2.0F;
+				if (isGoodSoil(posState.getBlock())) {
+					posFactor += 0.5F;
 				}
-
-				if (x != 0 || z != 0)
-				{
-					posFactor /= 4.0F;
-				}
-
-				factor += posFactor;
 			}
 		}
 
-		BlockPos var12 = pos.north();
-		BlockPos var13 = pos.south();
-		BlockPos var15 = pos.west();
-		BlockPos var14 = pos.east();
-		boolean blocksEW = block == world.getBlockState(var15).getBlock() || block == world.getBlockState(var14).getBlock();
-		boolean blocksNS = block == world.getBlockState(var12).getBlock() || block == world.getBlockState(var13).getBlock();
-		if (blocksEW && blocksNS)
-		{
-			factor /= 2.0F;
-		}
-		else
-		{
-			boolean isSurrounded = block == world.getBlockState(var15.north()).getBlock() || block == world.getBlockState(var14.north()).getBlock() || block == world.getBlockState(var14.south()).getBlock() || block == world.getBlockState(var15.south()).getBlock();
-			if (isSurrounded)
-			{
-				factor /= 2.0F;
-			}
-		}
+		factor += posFactor;
 
 		return factor;
 	}
 
-	public GourdBlock getMelonBlock()
-	{
-		return this.method_10694();
-	}
+	/*@Override
+	public boolean activate(BlockState blockState_1, World world_1, BlockPos blockPos_1, PlayerEntity playerEntity_1, Hand hand_1, BlockHitResult blockHitResult_1) {
+		System.out.println(getGrowthFactor(world_1,blockPos_1));
+		return super.activate(blockState_1, world_1, blockPos_1, playerEntity_1, hand_1, blockHitResult_1);
+	}*/
 }

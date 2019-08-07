@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "resourcemelons:item/emerald_seed"
+        "layer0": "resourcemelons:item/glowstone_slice"
     }
 }

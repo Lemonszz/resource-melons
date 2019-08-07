@@ -1,11 +1,13 @@
 {
-    "item.resourcemelons.diamond_seed": "Diamond Melon Seeds",
-    "item.resourcemelons.gold_seed": "Gold Melon Seeds",
-    "item.resourcemelons.emerald_seed": "Emerald Melon Seeds",
-    "item.resourcemelons.iron_seed": "Iron Melon Seeds",
-    "item.resourcemelons.lapis_seed": "Lapis Lazuli Melon Seeds",
-    "item.resourcemelons.redstone_seed": "Redstone Melon Seeds",
-    "item.resourcemelons.coal_seed": "Coal Melon Seeds",
+    "item.resourcemelons.diamond_seeds": "Diamond Melon Seeds",
+    "item.resourcemelons.gold_seeds": "Gold Melon Seeds",
+    "item.resourcemelons.emerald_seeds": "Emerald Melon Seeds",
+    "item.resourcemelons.iron_seeds": "Iron Melon Seeds",
+    "item.resourcemelons.lapis_seeds": "Lapis Lazuli Melon Seeds",
+    "item.resourcemelons.redstone_seeds": "Redstone Melon Seeds",
+    "item.resourcemelons.coal_seeds": "Coal Melon Seeds",
+    "item.resourcemelons.quartz_seeds": "Quartz Melon Seeds",
+    "item.resourcemelons.glowstone_seeds": "Glowstone Melon Seeds",
 
     "block.resourcemelons.diamond_melon": "Diamond Melon",
     "block.resourcemelons.gold_melon": "Gold Melon",
@@ -14,6 +16,8 @@
     "block.resourcemelons.lapis_melon": "Lapis Lazuli Melon",
     "block.resourcemelons.redstone_melon": "Redstone Melon",
     "block.resourcemelons.coal_melon": "Coal Melon",
+    "block.resourcemelons.quartz_melon": "Quartz Melon",
+    "block.resourcemelons.glowstone_melon": "Glowstone Melon",
 
     "item.resourcemelons.diamond_slice": "Diamond Melon Slice",
     "item.resourcemelons.gold_slice": "Gold Melon Slice",
@@ -21,5 +25,9 @@
     "item.resourcemelons.iron_slice": "Iron Melon Slice",
     "item.resourcemelons.lapis_slice": "Lapis Lazuli Melon Slice",
     "item.resourcemelons.redstone_slice": "Redstone Melon Slice",
-    "item.resourcemelons.coal_slice": "Coal Melon Slice"
+    "item.resourcemelons.coal_slice": "Coal Melon Slice",
+    "item.resourcemelons.quartz_slice": "Quartz Melon Slice",
+    "item.resourcemelons.glowstone_slice": "Glowstone Melon Slice",
+
+    "itemGroup.resourcemelons.group": "Resource Melons"
 }

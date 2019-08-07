@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "resourcemelons:glowstone_slice"
+        }
+    },
+    "result": {
+        "item": "resourcemelons:glowstone_melon",
+        "count": 1
+    }
+}

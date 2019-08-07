@@ -1,8 +1,31 @@
 {
-  "id": "resourcemelons",
-  "name": "Resource Melons",
-  "description": "Hot Damn! This mod adds melons that you can get resources from",
-  "version": "1.1.1",
-  "side": "universal",
-  "initializer": "party.lemons.resourcemelons.ResourceMelons"
+	"schemaVersion": 1,
+	"id": "resourcemelons",
+	"version": "2.0.0",
+	"name": "Resource Melons",
+	"description": "Resource Melons adds melons that you can get resources from!",
+	"authors": [
+		"Lemonszz",
+		"Shnupbups"
+	],
+	"contact": {
+		"homepage": "https://minecraft.curseforge.com/projects/resource-melons",
+		"sources": "https://github.com/Lemonszz/resource-melons",
+		"issues": "https://github.com/Lemonszz/resource-melons/issues"
+	},
+	"license": "MIT License",
+	"icon": "assets/resourcemelons/logo.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"party.lemons.resourcemelons.ResourceMelons"
+		],
+		"client": [
+			"party.lemons.resourcemelons.ResourceMelonsClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.4.0",
+		"fabric": "*"
+	}
 }
