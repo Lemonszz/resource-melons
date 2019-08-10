@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
+import net.minecraft.block.DispenserBlock;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;

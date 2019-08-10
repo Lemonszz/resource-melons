@@ -1,5 +1,6 @@
 package party.lemons.resourcemelons.item;
 
+import jdk.internal.jline.internal.Nullable;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Item;
@@ -14,9 +15,13 @@ public class ResourceMelonSliceItem extends Item {
 		this.output = output;
 	}
 
+	public ItemStack getOutputStack(ItemStack stack, World world, @Nullable LivingEntity livingEntity) {
+		return new ItemStack(output);
+	}
+
 	@Override
-	public ItemStack finishUsing(ItemStack itemStack_1, World world_1, LivingEntity livingEntity_1) {
-		world_1.spawnEntity(new ItemEntity(world_1, livingEntity_1.getBlockPos().getX(), livingEntity_1.getBlockPos().getY(), livingEntity_1.getBlockPos().getZ(), new ItemStack(output)));
-		return super.finishUsing(itemStack_1, world_1, livingEntity_1);
+	public ItemStack finishUsing(ItemStack stack, World world, LivingEntity livingEntity) {
+		world.spawnEntity(new ItemEntity(world, livingEntity.getBlockPos().getX(), livingEntity.getBlockPos().getY(), livingEntity.getBlockPos().getZ(), getOutputStack(stack, world, livingEntity)));
+		return super.finishUsing(stack, world, livingEntity);
 	}
 }

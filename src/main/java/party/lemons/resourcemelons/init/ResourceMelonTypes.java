@@ -2,15 +2,18 @@ package party.lemons.resourcemelons.init;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.DispenserBlock;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.loot.LootTables;
 import party.lemons.resourcemelons.ResourceMelons;
 import party.lemons.resourcemelons.block.ResourceMelonBlock;
 import party.lemons.resourcemelons.block.ResourceStemAttachedBlock;
 import party.lemons.resourcemelons.block.ResourceStemBlock;
 import party.lemons.resourcemelons.item.ResourceMelonSliceItem;
+import party.lemons.resourcemelons.misc.MelonDispenserBehavior;
 
 import java.util.ArrayList;
 
@@ -64,6 +67,8 @@ public class ResourceMelonTypes {
 
 		Registry.register(Registry.ITEM, new Identifier(id.getNamespace(), id.getPath() + "_seeds"), seeds);
 		Registry.register(Registry.ITEM, new Identifier(id.getNamespace(), id.getPath() + "_slice"), slice);
+
+		DispenserBlock.registerBehavior(slice, new MelonDispenserBehavior());
 
 		MELONS.add(info);
 		return info;
