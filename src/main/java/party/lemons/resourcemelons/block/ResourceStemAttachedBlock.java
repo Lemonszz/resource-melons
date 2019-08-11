@@ -1,23 +1,18 @@
 package party.lemons.resourcemelons.block;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
+
 import net.minecraft.block.AttachedStemBlock;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.GourdBlock;
 import net.minecraft.block.Material;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 public class ResourceStemAttachedBlock extends AttachedStemBlock {
 	private final ResourceStemBlock stem;
-
+	
 	public ResourceStemAttachedBlock(GourdBlock var1, ResourceStemBlock stem) {
 		super(var1, FabricBlockSettings.of(Material.PLANT).collidable(false).ticksRandomly().hardness(0).dropsLike(stem).sounds(BlockSoundGroup.WOOD).build());
-		this.stem=stem;
+		this.stem = stem;
 	}
 
 	/*@Override

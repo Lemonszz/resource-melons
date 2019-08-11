@@ -3,12 +3,10 @@ package party.lemons.resourcemelons.block;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
+
 import net.minecraft.block.*;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.LightType;
@@ -18,30 +16,30 @@ import java.util.Random;
 
 public class ResourceStemBlock extends StemBlock {
 	private static final float BASE_GROW_CHANCE = 25F;
-
+	
 	private Block soil;
 	private Item seeds;
-
+	
 	public ResourceStemBlock(GourdBlock melonBlock) {
 		super(melonBlock, FabricBlockSettings.of(Material.PLANT).collidable(false).ticksRandomly().hardness(0).sounds(BlockSoundGroup.WOOD).build());
 	}
-
+	
 	public ResourceStemBlock setSeeds(Item seeds) {
 		this.seeds = seeds;
 		return this;
 	}
-
+	
 	public ResourceStemBlock setSoil(Block soil) {
 		this.soil = soil;
 		return this;
 	}
-
+	
 	@Environment(EnvType.CLIENT)
 	@Override
 	protected Item getPickItem() {
 		return seeds;
 	}
-
+	
 	@Override
 	public void onScheduledTick(BlockState state, World world, BlockPos pos, Random random) {
 		if (!world.isSkyVisible(pos.up())) {
@@ -65,25 +63,25 @@ public class ResourceStemBlock extends StemBlock {
 					}
 				}
 			}
-
+			
 		}
 	}
-
+	
 	public boolean isGoodSoil(Block block) {
 		return block.equals(soil);
 	}
-
+	
 	public float getGrowthFactor(World world, BlockPos pos) {
 		float factor = 1.0F;
-
+		
 		float lightFactor = (15.0F - world.getLightLevel(LightType.SKY, pos.up())) / 10.0F;
-
+		
 		factor += lightFactor;
-
+		
 		BlockPos downPos = pos.down();
-
+		
 		float posFactor = -0.5F;
-
+		
 		for (int x = -1; x <= 1; ++x) {
 			for (int z = -1; z <= 1; ++z) {
 				BlockState posState = world.getBlockState(downPos.add(x, 0, z));
@@ -92,9 +90,9 @@ public class ResourceStemBlock extends StemBlock {
 				}
 			}
 		}
-
+		
 		factor += posFactor;
-
+		
 		return factor;
 	}
 
