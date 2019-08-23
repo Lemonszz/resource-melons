@@ -12,7 +12,6 @@ minecraft {
 }
 
 repositories {
-    maven { url "https://minecraft.curseforge.com/api/maven"}
 }
 
 dependencies {
@@ -22,8 +21,8 @@ dependencies {
             
     //Fabric api
     modCompile "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
+
 	// stuff for dev env
-	modCompile "io.github.prospector.modmenu:ModMenu:${project.modmenu_version}"
-	modCompile "me.shedaniel:RoughlyEnoughItems:${project.rei_version}"
+	modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"
+    modImplementation ("me.shedaniel:RoughlyEnoughItems:${project.rei_version}") { exclude(module: 'ModMenu') }
 }

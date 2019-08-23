@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public class ResourceStemBlock extends StemBlock {
-	private static final float BASE_GROW_CHANCE = 25F;
+	private static final float BASE_GROW_CHANCE = 24F;
 	
 	private Block soil;
 	private Item seeds;
@@ -56,7 +56,7 @@ public class ResourceStemBlock extends StemBlock {
 					if (world.getBlockState(melonPos).isAir() && isGoodSoil(melonSoilBlock)) {
 						world.setBlockState(melonPos, getGourdBlock().getDefaultState());
 						if (world.random.nextInt(7) == 0) {
-							world.setBlockState(pos, Blocks.AIR.getDefaultState());
+							world.setBlockState(pos, this.getDefaultState());
 						} else {
 							world.setBlockState(pos, getGourdBlock().getAttachedStem().getDefaultState().with(HorizontalFacingBlock.FACING, facing));
 						}
@@ -98,7 +98,7 @@ public class ResourceStemBlock extends StemBlock {
 
 	/*@Override
 	public boolean activate(BlockState blockState_1, World world_1, BlockPos blockPos_1, PlayerEntity playerEntity_1, Hand hand_1, BlockHitResult blockHitResult_1) {
-		System.out.println(getGrowthFactor(world_1,blockPos_1));
+		System.out.println("( "+BASE_GROW_CHANCE+" / "+getGrowthFactor(world_1,blockPos_1)+" ) + 1 = "+((BASE_GROW_CHANCE/getGrowthFactor(world_1,blockPos_1))+1));
 		return super.activate(blockState_1, world_1, blockPos_1, playerEntity_1, hand_1, blockHitResult_1);
 	}*/
 }

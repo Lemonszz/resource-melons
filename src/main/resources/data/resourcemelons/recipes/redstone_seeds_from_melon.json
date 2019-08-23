@@ -1,11 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "resourcemelons:redstone_melon"
-    }
+	{
+	  "item": "resourcemelons:redstone_melon"
+	}
   ],
   "result": {
-    "item": "resourcemelons:redstone_seeds"
+	"item": "resourcemelons:redstone_seeds"
   }
 }

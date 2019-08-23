@@ -41,11 +41,11 @@ public class ResourceMelonTypes {
 		GLOWSTONE_MELON = createMelon("glowstone", Items.GLOWSTONE_DUST, Blocks.GLOWSTONE, 0xFFEC8E);
 	}
 	
-	public static MelonInfo createMelon(String name, Item output, Block soil, int colour) {
-		return createMelon(new Identifier(ResourceMelons.MODID, name), output, soil, colour);
+	public static MelonInfo createMelon(String name, Item resource, Block soil, int colour) {
+		return createMelon(new Identifier(ResourceMelons.MODID, name), resource, soil, colour);
 	}
 	
-	public static MelonInfo createMelon(Identifier id, Item output, Block soil, int colour) {
+	public static MelonInfo createMelon(Identifier id, Item resource, Block soil, int colour) {
 		ResourceMelonBlock melon = new ResourceMelonBlock();
 		ResourceStemBlock stem = new ResourceStemBlock(melon);
 		ResourceStemAttachedBlock aStem = new ResourceStemAttachedBlock(melon, stem);
@@ -54,7 +54,7 @@ public class ResourceMelonTypes {
 		AliasedBlockItem seeds = new AliasedBlockItem(stem, (new Item.Settings()).group(ResourceMelons.group));
 		stem.setSeeds(seeds);
 		stem.setSoil(soil);
-		ResourceMelonSliceItem slice = new ResourceMelonSliceItem(output, (new Item.Settings()).group(ResourceMelons.group).food(MELON));
+		ResourceMelonSliceItem slice = new ResourceMelonSliceItem(resource, (new Item.Settings()).group(ResourceMelons.group).food(MELON));
 		
 		MelonInfo info = new MelonInfo(stem, aStem, melon, seeds, slice, soil, colour);
 		

@@ -26,52 +26,44 @@ public class ResourceMelons implements ModInitializer {
 		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, supplier, setter) -> {
 			if (new Identifier("chests/abandoned_mineshaft").equals(id)) {
 				FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-						.withRolls(UniformLootTableRange.between(0.0f, 2.0f))
+						.withRolls(UniformLootTableRange.between(0.0f, 1.0f))
 						.withEntry(LootTableEntry.builder(new Identifier(MODID, "chests/abandoned_mineshaft_inject")));
 				supplier.withPool(poolBuilder);
-				System.out.println("inject mineshaft");
 			} else if (new Identifier("chests/buried_treasure").equals(id)) {
 				FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-						.withRolls(UniformLootTableRange.between(0.0f, 2.0f))
+						.withRolls(UniformLootTableRange.between(0.0f, 1.0f))
 						.withEntry(LootTableEntry.builder(new Identifier(MODID, "chests/buried_treasure_inject")));
 				supplier.withPool(poolBuilder);
-				System.out.println("inject buried");
 			} else if (new Identifier("chests/end_city_treasure").equals(id)) {
 				FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-						.withRolls(UniformLootTableRange.between(0.0f, 5.0f))
+						.withRolls(UniformLootTableRange.between(0.0f, 1.0f))
 						.withEntry(LootTableEntry.builder(new Identifier(MODID, "chests/end_city_treasure_inject")));
 				supplier.withPool(poolBuilder);
-				System.out.println("inject end");
 			} else if (new Identifier("chests/jungle_temple").equals(id)) {
 				FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-						.withRolls(UniformLootTableRange.between(0.0f, 2.0f))
+						.withRolls(UniformLootTableRange.between(0.0f, 1.0f))
 						.withEntry(LootTableEntry.builder(new Identifier(MODID, "chests/jungle_temple_inject")));
 				supplier.withPool(poolBuilder);
-				System.out.println("inject jungle");
 			} else if (new Identifier("chests/nether_bridge").equals(id)) {
 				FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-						.withRolls(UniformLootTableRange.between(0.0f, 4.0f))
+						.withRolls(UniformLootTableRange.between(0.0f, 1.0f))
 						.withEntry(LootTableEntry.builder(new Identifier(MODID, "chests/nether_bridge_inject")));
 				supplier.withPool(poolBuilder);
-				System.out.println("inject nether");
 			} else if (new Identifier("chests/shipwreck_treasure").equals(id)) {
 				FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-						.withRolls(UniformLootTableRange.between(0.0f, 2.0f))
+						.withRolls(UniformLootTableRange.between(0.0f, 1.0f))
 						.withEntry(LootTableEntry.builder(new Identifier(MODID, "chests/shipwreck_treasure_inject")));
 				supplier.withPool(poolBuilder);
-				System.out.println("inject shipwreck");
 			} else if (new Identifier("chests/simple_dungeon").equals(id)) {
 				FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-						.withRolls(UniformLootTableRange.between(0.0f, 2.0f))
+						.withRolls(UniformLootTableRange.between(0.0f, 1.0f))
 						.withEntry(LootTableEntry.builder(new Identifier(MODID, "chests/simple_dungeon_inject")));
 				supplier.withPool(poolBuilder);
-				System.out.println("inject dungeon");
 			} else if (new Identifier("chests/stronghold_corridor").equals(id)) {
 				FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-						.withRolls(UniformLootTableRange.between(0.0f, 3.0f))
+						.withRolls(UniformLootTableRange.between(0.0f, 1.0f))
 						.withEntry(LootTableEntry.builder(new Identifier(MODID, "chests/stronghold_corridor_inject")));
 				supplier.withPool(poolBuilder);
-				System.out.println("inject stronghold");
 			}
 		});
 	}

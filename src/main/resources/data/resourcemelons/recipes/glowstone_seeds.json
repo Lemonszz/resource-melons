@@ -1,20 +1,23 @@
 {
-    "type": "crafting_shaped",
-    "pattern": [
-        "###",
-        "#M#",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:glowstone"
-        },
-        "M": {
-            "item": "minecraft:melon_seeds"
-        }
-    },
-    "result": {
-        "item": "resourcemelons:glowstone_seeds",
-        "count": 1
-    }
+  "type": "crafting_shaped",
+  "pattern": [
+	"r#r",
+	"#M#",
+	"r#r"
+  ],
+  "key": {
+	"#": {
+	  "item": "minecraft:glowstone"
+	},
+	"r": {
+	  "item": "minecraft:glowstone_dust"
+	},
+	"M": {
+	  "item": "minecraft:melon_seeds"
+	}
+  },
+  "result": {
+	"item": "resourcemelons:glowstone_seeds",
+	"count": 1
+  }
 }

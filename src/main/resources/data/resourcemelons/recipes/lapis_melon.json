@@ -1,17 +1,17 @@
 {
-    "type": "crafting_shaped",
-    "pattern": [
-        "###",
-        "###",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "resourcemelons:lapis_slice"
-        }
-    },
-    "result": {
-        "item": "resourcemelons:lapis_melon",
-        "count": 1
-    }
+  "type": "crafting_shaped",
+  "pattern": [
+	"###",
+	"###",
+	"###"
+  ],
+  "key": {
+	"#": {
+	  "item": "resourcemelons:lapis_slice"
+	}
+  },
+  "result": {
+	"item": "resourcemelons:lapis_melon",
+	"count": 1
+  }
 }

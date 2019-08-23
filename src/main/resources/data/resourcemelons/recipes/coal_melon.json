@@ -1,17 +1,17 @@
 {
-    "type": "crafting_shaped",
-    "pattern": [
-        "###",
-        "###",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "resourcemelons:coal_slice"
-        }
-    },
-    "result": {
-        "item": "resourcemelons:coal_melon",
-        "count": 1
-    }
+  "type": "crafting_shaped",
+  "pattern": [
+	"###",
+	"###",
+	"###"
+  ],
+  "key": {
+	"#": {
+	  "item": "resourcemelons:coal_slice"
+	}
+  },
+  "result": {
+	"item": "resourcemelons:coal_melon",
+	"count": 1
+  }
 }
