@@ -55,6 +55,10 @@
     "text.autoconfig.resourcemelons.option.growth.requireNoSky.@Tooltip": "Melon plants won't grow if they have a direct line of sight to the sky",
     "text.autoconfig.resourcemelons.option.growth.baseGrowthChance": "Base Growth Chance",
     "text.autoconfig.resourcemelons.option.growth.baseGrowthChance.@Tooltip": "The base chance (as 1 in X) that a melon plant will grow each random tick",
+    "text.autoconfig.resourcemelons.option.growth.canRevert": "Can Revert Growth",
+    "text.autoconfig.resourcemelons.option.growth.canRevert.@Tooltip": "Whether a melon plant can revert to its original state upon growing a melon",
+    "text.autoconfig.resourcemelons.option.growth.revertChance": "Revert Chance",
+    "text.autoconfig.resourcemelons.option.growth.revertChance.@Tooltip": "The chance (as 1 in X) that a melon plant will revert to its original state upon growing a melon",
 
     "text.autoconfig.resourcemelons.option.growth.growthChanceModifiers": "Growth Chance Modifiers",
     "text.autoconfig.resourcemelons.option.growth.growthChanceModifiers.@Tooltip": "Various circumstances that can alter the base growth chance",

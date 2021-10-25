@@ -26,6 +26,10 @@ public class ResourceMelonsConfig implements ConfigData {
         @ConfigEntry.Gui.Tooltip
         public float baseGrowthChance = 50f;
         @ConfigEntry.Gui.Tooltip
+        public boolean canRevert = false;
+        @ConfigEntry.Gui.Tooltip
+        public int revertChance = 8;
+        @ConfigEntry.Gui.Tooltip
         @ConfigEntry.Gui.CollapsibleObject
         public GrowthChanceModifiers growthChanceModifiers = new GrowthChanceModifiers();
 

@@ -39,7 +39,10 @@ public class ResourceStemBlock extends StemBlock {
 					BlockState gourdSoilState = world.getBlockState(gourdPos.down());
 					if (world.getBlockState(gourdPos).isAir() && (gourdSoilState.isOf(Blocks.FARMLAND) || gourdSoilState.isIn(BlockTags.DIRT) || this.isCatalyst(gourdSoilState))) {
 						world.setBlockState(gourdPos, this.getGourdBlock().getDefaultState());
-						world.setBlockState(pos, this.getGourdBlock().getAttachedStem().getDefaultState().with(HorizontalFacingBlock.FACING, direction));
+						if(ResourceMelons.config.growth.canRevert && random.nextInt(ResourceMelons.config.growth.revertChance) == 0)
+							world.setBlockState(pos, this.getDefaultState());
+						else
+							world.setBlockState(pos, this.getGourdBlock().getAttachedStem().getDefaultState().with(HorizontalFacingBlock.FACING, direction));
 					}
 				}
 			}
