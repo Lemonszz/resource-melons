@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#resourcemelons:unwaxed_copper_blocks",
+    "#resourcemelons:waxed_copper_blocks"
+  ]
+}

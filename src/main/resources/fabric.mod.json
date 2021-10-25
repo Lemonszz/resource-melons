@@ -1,31 +1,38 @@
 {
-	"schemaVersion": 1,
-	"id": "resourcemelons",
-	"version": "1.3.0",
-	"name": "Resource Melons",
-	"description": "Resource Melons adds melons that you can get resources from!",
-	"authors": [
-		"Lemonszz",
-		"Shnupbups"
+  "schemaVersion": 1,
+  "id": "resourcemelons",
+  "version": "$version",
+
+  "name": "Resource Melons",
+  "description": "Adds melons that you can get resources from!",
+  "authors": [
+    "Shnupbups",
+    "Lemonszz"
+  ],
+
+  "contact": {
+	"homepage": "https://www.curseforge.com/minecraft/mc-mods/resource-melons",
+	"sources": "https://github.com/Lemonszz/resource-melons",
+	"issues": "https://github.com/Lemonszz/resource-melons/issues"
+  },
+  "license": "MIT License",
+  "icon": "assets/resourcemelons/logo.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.shnupbups.resourcemelons.ResourceMelons"
 	],
-	"contact": {
-		"homepage": "https://minecraft.curseforge.com/projects/resource-melons",
-		"sources": "https://github.com/Lemonszz/resource-melons",
-		"issues": "https://github.com/Lemonszz/resource-melons/issues"
-	},
-	"license": "MIT License",
-	"icon": "assets/resourcemelons/logo.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"party.lemons.resourcemelons.ResourceMelons"
-		],
-		"client": [
-			"party.lemons.resourcemelons.ResourceMelonsClient"
-		]
-	},
-	"depends": {
-		"fabricloader": ">=0.4.0",
-		"fabric": "*"
-	}
+	"client": [
+      "com.shnupbups.resourcemelons.ResourceMelonsClient"
+	],
+    "modmenu": [
+      "com.shnupbups.resourcemelons.ResourceMelonsConfigScreen"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": ">=0.6.1",
+    "fabric": "*"
+  }
 }

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+	{
+	  "item": "resourcemelons:netherite_melon"
+	}
+  ],
+  "result": {
+	"item": "resourcemelons:netherite_seeds"
+  }
+}

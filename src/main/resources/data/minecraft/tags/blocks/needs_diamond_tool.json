@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "resourcemelons:netherite_melon",
+    "resourcemelons:netherite_stem",
+    "resourcemelons:netherite_attached_stem"
+  ]
+}

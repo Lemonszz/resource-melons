@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#resourcemelons:copper_blocks",
+    "#resourcemelons:cut_copper",
+    "minecraft:raw_copper_block"
+  ]
+}

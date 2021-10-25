@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "resourcemelons:diamond_melon",
+    "resourcemelons:emerald_melon",
+    "resourcemelons:redstone_melon",
+    "resourcemelons:gold_melon",
+    "resourcemelons:diamond_stem",
+    "resourcemelons:emerald_stem",
+    "resourcemelons:redstone_stem",
+    "resourcemelons:gold_stem",
+    "resourcemelons:diamond_attached_stem",
+    "resourcemelons:emerald_attached_stem",
+    "resourcemelons:redstone_attached_stem",
+    "resourcemelons:gold_attached_stem"
+  ]
+}

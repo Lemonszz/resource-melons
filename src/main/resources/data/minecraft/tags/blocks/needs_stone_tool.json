@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "resourcemelons:iron_melon",
+    "resourcemelons:lapis_melon",
+    "resourcemelons:copper_melon",
+    "resourcemelons:iron_stem",
+    "resourcemelons:lapis_stem",
+    "resourcemelons:copper_stem",
+    "resourcemelons:iron_attached_stem",
+    "resourcemelons:lapis_attached_stem",
+    "resourcemelons:copper_attached_stem"
+  ]
+}

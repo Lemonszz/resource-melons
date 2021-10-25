@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "resourcemelons:block/amethyst_melon_top",
+    "side": "resourcemelons:block/amethyst_melon_side"
+  }
+}
