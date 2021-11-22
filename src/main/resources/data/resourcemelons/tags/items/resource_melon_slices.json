@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "resourcemelons:diamond_slice",
+    "resourcemelons:gold_slice",
+    "resourcemelons:emerald_slice",
+    "resourcemelons:iron_slice",
+    "resourcemelons:lapis_slice",
+    "resourcemelons:redstone_slice",
+    "resourcemelons:coal_slice",
+    "resourcemelons:quartz_slice",
+    "resourcemelons:glowstone_slice",
+    "resourcemelons:copper_slice",
+    "resourcemelons:amethyst_slice",
+    "resourcemelons:netherite_slice"
+  ]
+}

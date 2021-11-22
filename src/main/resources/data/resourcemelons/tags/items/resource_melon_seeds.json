@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "resourcemelons:diamond_seeds",
+    "resourcemelons:gold_seeds",
+    "resourcemelons:emerald_seeds",
+    "resourcemelons:iron_seeds",
+    "resourcemelons:lapis_seeds",
+    "resourcemelons:redstone_seeds",
+    "resourcemelons:coal_seeds",
+    "resourcemelons:quartz_seeds",
+    "resourcemelons:glowstone_seeds",
+    "resourcemelons:copper_seeds",
+    "resourcemelons:amethyst_seeds",
+    "resourcemelons:netherite_seeds"
+  ]
+}

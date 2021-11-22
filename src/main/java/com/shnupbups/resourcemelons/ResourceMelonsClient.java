@@ -1,14 +1,16 @@
 package com.shnupbups.resourcemelons;
 
-import com.shnupbups.resourcemelons.core.MelonType;
+import net.minecraft.client.render.RenderLayer;
+
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.minecraft.client.render.RenderLayer;
+
+import com.shnupbups.resourcemelons.core.MelonType;
 
 @SuppressWarnings("unused")
 public class ResourceMelonsClient implements ClientModInitializer {
-	
+
 	@Override
 	public void onInitializeClient() {
 		for (MelonType melon : ResourceMelons.MELONS) {
