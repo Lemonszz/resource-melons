@@ -1,0 +1,23 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+	"r#r",
+	"#M#",
+	"r#r"
+  ],
+  "key": {
+	"#": {
+	  "item": "minecraft:gold_block"
+	},
+	"r": {
+	  "item": "minecraft:gold_ingot"
+	},
+	"M": {
+	  "item": "minecraft:melon_seeds"
+	}
+  },
+  "result": {
+	"item": "resourcemelons:gold_melon_seeds",
+	"count": 1
+  }
+}

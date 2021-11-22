@@ -1,0 +1,23 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+	"#r#",
+	"rMr",
+	"#r#"
+  ],
+  "key": {
+	"#": {
+	  "item": "minecraft:emerald_block"
+	},
+	"r": {
+	  "item": "minecraft:emerald"
+	},
+	"M": {
+	  "item": "minecraft:melon_seeds"
+	}
+  },
+  "result": {
+	"item": "resourcemelons:emerald_melon_seeds",
+	"count": 1
+  }
+}

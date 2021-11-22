@@ -1,0 +1,23 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+	"r#r",
+	"#M#",
+	"r#r"
+  ],
+  "key": {
+	"#": {
+	  "item": "minecraft:quartz_block"
+	},
+	"r": {
+	  "item": "minecraft:quartz"
+	},
+	"M": {
+	  "item": "minecraft:melon_seeds"
+	}
+  },
+  "result": {
+	"item": "resourcemelons:quartz_melon_seeds",
+	"count": 1
+  }
+}

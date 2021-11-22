@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "resourcemelons:diamond_melon_stem",
+    "resourcemelons:gold_melon_stem",
+    "resourcemelons:emerald_melon_stem",
+    "resourcemelons:iron_melon_stem",
+    "resourcemelons:lapis_melon_stem",
+    "resourcemelons:redstone_melon_stem",
+    "resourcemelons:coal_melon_stem",
+    "resourcemelons:quartz_melon_stem",
+    "resourcemelons:glowstone_melon_stem",
+    "resourcemelons:copper_melon_stem",
+    "resourcemelons:amethyst_melon_stem",
+    "resourcemelons:netherite_melon_stem"
+  ]
+}

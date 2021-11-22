@@ -1,0 +1,23 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+	"r#r",
+	"#M#",
+	"r#r"
+  ],
+  "key": {
+	"#": {
+	  "item": "minecraft:copper_block"
+	},
+	"r": {
+	  "item": "minecraft:copper_ingot"
+	},
+	"M": {
+	  "item": "minecraft:melon_seeds"
+	}
+  },
+  "result": {
+	"item": "resourcemelons:copper_melon_seeds",
+	"count": 1
+  }
+}

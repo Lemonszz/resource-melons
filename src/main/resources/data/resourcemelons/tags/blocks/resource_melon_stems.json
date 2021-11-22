@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#resourcemelons:resource_melon_unattached_stems",
+    "#resourcemelons:resource_melon_attached_stems"
+  ]
+}

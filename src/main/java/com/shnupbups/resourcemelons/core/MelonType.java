@@ -25,10 +25,10 @@ public record MelonType(Identifier id, ResourceStemBlock stem, ResourceAttachedS
 	}
 
 	public void register() {
-		String path = id().getPath();
+		String path = id().getPath() + "_melon";
 
-		Registry.register(Registry.BLOCK, new Identifier(id().getNamespace(), path + "_melon"), melon);
-		createBlockItem(melon, new Identifier(id().getNamespace(), path + "_melon"));
+		Registry.register(Registry.BLOCK, new Identifier(id().getNamespace(), path), melon);
+		createBlockItem(melon, new Identifier(id().getNamespace(), path));
 
 		Registry.register(Registry.BLOCK, new Identifier(id().getNamespace(), path + "_stem"), stem);
 		Registry.register(Registry.BLOCK, new Identifier(id().getNamespace(), path + "_attached_stem"), attachedStem);

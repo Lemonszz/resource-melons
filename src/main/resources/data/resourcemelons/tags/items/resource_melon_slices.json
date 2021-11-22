@@ -1,17 +1,17 @@
 {
   "replace": false,
   "values": [
-    "resourcemelons:diamond_slice",
-    "resourcemelons:gold_slice",
-    "resourcemelons:emerald_slice",
-    "resourcemelons:iron_slice",
-    "resourcemelons:lapis_slice",
-    "resourcemelons:redstone_slice",
-    "resourcemelons:coal_slice",
-    "resourcemelons:quartz_slice",
-    "resourcemelons:glowstone_slice",
-    "resourcemelons:copper_slice",
-    "resourcemelons:amethyst_slice",
-    "resourcemelons:netherite_slice"
+    "resourcemelons:diamond_melon_slice",
+    "resourcemelons:gold_melon_slice",
+    "resourcemelons:emerald_melon_slice",
+    "resourcemelons:iron_melon_slice",
+    "resourcemelons:lapis_melon_slice",
+    "resourcemelons:redstone_melon_slice",
+    "resourcemelons:coal_melon_slice",
+    "resourcemelons:quartz_melon_slice",
+    "resourcemelons:glowstone_melon_slice",
+    "resourcemelons:copper_melon_slice",
+    "resourcemelons:amethyst_melon_slice",
+    "resourcemelons:netherite_melon_slice"
   ]
 }

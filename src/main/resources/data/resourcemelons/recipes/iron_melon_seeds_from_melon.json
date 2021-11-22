@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+	{
+	  "item": "resourcemelons:iron_melon"
+	}
+  ],
+  "result": {
+	"item": "resourcemelons:iron_melon_seeds"
+  }
+}

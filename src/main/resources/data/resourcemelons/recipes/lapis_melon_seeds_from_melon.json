@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+	{
+	  "item": "resourcemelons:lapis_melon"
+	}
+  ],
+  "result": {
+	"item": "resourcemelons:lapis_melon_seeds"
+  }
+}
