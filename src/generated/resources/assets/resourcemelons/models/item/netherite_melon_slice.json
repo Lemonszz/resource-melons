@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "resourcemelons:item/netherite_melon_slice"
+  }
+}

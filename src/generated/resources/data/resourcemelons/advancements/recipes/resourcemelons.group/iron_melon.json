@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "resourcemelons:iron_melon"
+    ]
+  },
+  "criteria": {
+    "has_iron_melon_slice": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcemelons:iron_melon_slice"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "resourcemelons:iron_melon"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_iron_melon_slice",
+      "has_the_recipe"
+    ]
+  ]
+}

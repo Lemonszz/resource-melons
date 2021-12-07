@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "amethyst_melon_seeds",
+  "pattern": [
+    "rbr",
+    "bsb",
+    "rbr"
+  ],
+  "key": {
+    "r": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "b": {
+      "item": "minecraft:amethyst_block"
+    },
+    "s": {
+      "item": "minecraft:melon_seeds"
+    }
+  },
+  "result": {
+    "item": "resourcemelons:amethyst_melon_seeds"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "iron_melon_seeds",
+  "pattern": [
+    "rbr",
+    "bsb",
+    "rbr"
+  ],
+  "key": {
+    "r": {
+      "item": "minecraft:raw_iron"
+    },
+    "b": {
+      "item": "minecraft:iron_block"
+    },
+    "s": {
+      "item": "minecraft:melon_seeds"
+    }
+  },
+  "result": {
+    "item": "resourcemelons:iron_melon_seeds"
+  }
+}

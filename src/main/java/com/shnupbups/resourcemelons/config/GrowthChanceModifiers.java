@@ -5,37 +5,37 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 public class GrowthChanceModifiers {
 	@ConfigEntry.Gui.Tooltip(count = 2)
 	@ConfigEntry.Gui.CollapsibleObject
-	public ToggleableFloatConfigEntry secondaryCatalysts = new ToggleableFloatConfigEntry(0.75f);
+	public ToggleableValueConfigEntry secondaryCatalysts = new ToggleableValueConfigEntry(0.75f);
 	@ConfigEntry.Gui.Tooltip
 	@ConfigEntry.Gui.CollapsibleObject
-	public ToggleableFloatConfigEntry moisture = new ToggleableFloatConfigEntry(0.1f);
+	public ToggleableValueConfigEntry moisture = new ToggleableValueConfigEntry(0.1f);
 	@ConfigEntry.Gui.Tooltip(count = 2)
 	@ConfigEntry.Gui.CollapsibleObject
-	public ToggleableFloatConfigEntry light = new ToggleableFloatConfigEntry(0.1f);
+	public ToggleableMultiplierConfigEntry light = new ToggleableMultiplierConfigEntry(0.1f);
 	@ConfigEntry.Gui.Tooltip
 	@ConfigEntry.Gui.CollapsibleObject
-	public ToggleableFloatConfigEntry skyLight = new ToggleableFloatConfigEntry(0.1f);
+	public ToggleableMultiplierConfigEntry skyLight = new ToggleableMultiplierConfigEntry(0.1f);
 	@ConfigEntry.Gui.Tooltip(count = 2)
 	@ConfigEntry.Gui.CollapsibleObject
-	public ToggleableFloatConfigEntry allSecondaryCatalysts = new ToggleableFloatConfigEntry(1.5f);
+	public ToggleableMultiplierConfigEntry allSecondaryCatalysts = new ToggleableMultiplierConfigEntry(1.5f);
 
-	public ToggleableFloatConfigEntry secondaryCatalysts() {
+	public ToggleableValueConfigEntry secondaryCatalysts() {
 		return secondaryCatalysts;
 	}
 
-	public ToggleableFloatConfigEntry moisture() {
+	public ToggleableValueConfigEntry moisture() {
 		return moisture;
 	}
 
-	public ToggleableFloatConfigEntry light() {
+	public ToggleableMultiplierConfigEntry light() {
 		return light;
 	}
 
-	public ToggleableFloatConfigEntry skyLight() {
+	public ToggleableMultiplierConfigEntry skyLight() {
 		return skyLight;
 	}
 
-	public ToggleableFloatConfigEntry allSecondaryCatalysts() {
+	public ToggleableMultiplierConfigEntry allSecondaryCatalysts() {
 		return allSecondaryCatalysts;
 	}
 }

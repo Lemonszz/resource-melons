@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "coal_melon_seeds",
+  "pattern": [
+    "brb",
+    "rsr",
+    "brb"
+  ],
+  "key": {
+    "r": {
+      "item": "minecraft:coal"
+    },
+    "b": {
+      "item": "minecraft:coal_block"
+    },
+    "s": {
+      "item": "minecraft:melon_seeds"
+    }
+  },
+  "result": {
+    "item": "resourcemelons:coal_melon_seeds"
+  }
+}

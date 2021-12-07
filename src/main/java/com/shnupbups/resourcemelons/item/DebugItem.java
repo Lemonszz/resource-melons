@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
-import com.shnupbups.resourcemelons.block.ResourceStemBlock;
+import com.shnupbups.resourcemelons.block.ResourceMelonStemBlock;
 
 public class DebugItem extends Item {
 	public DebugItem(Settings settings) {
@@ -20,30 +20,30 @@ public class DebugItem extends Item {
 	public ActionResult useOnBlock(ItemUsageContext context) {
 		World world = context.getWorld();
 		BlockPos pos = context.getBlockPos();
-		if (!world.isClient() && world.getBlockState(pos).getBlock() instanceof ResourceStemBlock stem) {
+		if (!world.isClient() && world.getBlockState(pos).getBlock() instanceof ResourceMelonStemBlock stem) {
 			PlayerEntity player = context.getPlayer();
 			if (world.isSkyVisible(pos.up())) {
 				player.sendMessage(new LiteralText("Sky visible, can't grow!"), false);
 			} else if (!stem.isCatalyst(world.getBlockState(pos.down(2)))) {
 				player.sendMessage(new LiteralText("No catalyst, can't grow!"), false);
 			} else {
-				int moisture = ResourceStemBlock.getMoisture(world, pos);
-				float moistureGrowthModifier = ResourceStemBlock.getMoistureGrowthModifier(world, pos);
-				boolean moistureGrowthModifierEnabled = ResourceStemBlock.getGrowthChanceModifiers().moisture().enabled();
+				int moisture = ResourceMelonStemBlock.getMoisture(world, pos);
+				float moistureGrowthModifier = ResourceMelonStemBlock.getMoistureGrowthModifier(world, pos);
+				boolean moistureGrowthModifierEnabled = ResourceMelonStemBlock.getGrowthChanceModifiers().moisture().enabled();
 				int secondaryCatalystCount = stem.getSecondaryCatalystCount(world, pos);
 				float secondaryCatalystGrowthModifier = stem.getSecondaryCatalystGrowthModifier(world, pos);
-				boolean secondaryCatalystGrowthModifierEnabled = ResourceStemBlock.getGrowthChanceModifiers().secondaryCatalysts().enabled();
+				boolean secondaryCatalystGrowthModifierEnabled = ResourceMelonStemBlock.getGrowthChanceModifiers().secondaryCatalysts().enabled();
 				int light = world.getLightLevel(pos);
-				float lightGrowthModifier = ResourceStemBlock.getLightGrowthModifier(world, pos);
-				boolean lightGrowthModifierEnabled = ResourceStemBlock.getGrowthChanceModifiers().light().enabled();
+				float lightGrowthModifier = ResourceMelonStemBlock.getLightGrowthModifier(world, pos);
+				boolean lightGrowthModifierEnabled = ResourceMelonStemBlock.getGrowthChanceModifiers().light().enabled();
 				int skyLight = world.getLightLevel(LightType.SKY, pos);
-				float skyLightGrowthModifier = ResourceStemBlock.getSkyLightGrowthModifier(world, pos);
-				boolean skyLightGrowthModifierEnabled = ResourceStemBlock.getGrowthChanceModifiers().skyLight().enabled();
+				float skyLightGrowthModifier = ResourceMelonStemBlock.getSkyLightGrowthModifier(world, pos);
+				boolean skyLightGrowthModifierEnabled = ResourceMelonStemBlock.getGrowthChanceModifiers().skyLight().enabled();
 				boolean allCatalysts = stem.hasAllSecondaryCatalysts(world, pos);
 				float allCatalystsGrowthModifier = stem.getAllSecondaryCatalystsGrowthModifier(world, pos);
-				boolean allCatalystsGrowthModifierEnabled = ResourceStemBlock.getGrowthChanceModifiers().allSecondaryCatalysts().enabled();
+				boolean allCatalystsGrowthModifierEnabled = ResourceMelonStemBlock.getGrowthChanceModifiers().allSecondaryCatalysts().enabled();
 				float totalGrowthModifier = stem.getTotalGrowthModifier(world, pos);
-				float baseGrowthChance = ResourceStemBlock.getBaseGrowthChance();
+				float baseGrowthChance = ResourceMelonStemBlock.getBaseGrowthChance();
 				float totalGrowthChance = stem.getGrowthChance(world, pos);
 				if (moistureGrowthModifierEnabled)
 					player.sendMessage(new LiteralText("Moisture: " + moisture + " Modifier: " + moistureGrowthModifier), false);

@@ -1,18 +1,20 @@
 package com.shnupbups.resourcemelons.core;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 
-import com.shnupbups.resourcemelons.ResourceMelons;
-import com.shnupbups.resourcemelons.block.ResourceAttachedStemBlock;
+import com.shnupbups.resourcemelons.RMCommon;
+import com.shnupbups.resourcemelons.block.ResourceMelonAttachedStemBlock;
 import com.shnupbups.resourcemelons.block.ResourceMelonBlock;
-import com.shnupbups.resourcemelons.block.ResourceStemBlock;
+import com.shnupbups.resourcemelons.block.ResourceMelonStemBlock;
 import com.shnupbups.resourcemelons.item.ResourceMelonSliceItem;
 
 public interface MelonTypeBuilder {
@@ -32,15 +34,16 @@ public interface MelonTypeBuilder {
 
 	default MelonType build() {
 		ResourceMelonBlock melon = new ResourceMelonBlock(getMelonSettings());
-		ResourceStemBlock stem = new ResourceStemBlock(melon, melon::getSeeds, getInfo().catalyst(), getStemSettings());
-		ResourceAttachedStemBlock attachedStem = new ResourceAttachedStemBlock(melon, melon::getSeeds, getAttachedStemSettings());
+		ResourceMelonStemBlock stem = new ResourceMelonStemBlock(melon, melon::getSeeds, getInfo().catalyst(), getStemSettings());
+		ResourceMelonAttachedStemBlock attachedStem = new ResourceMelonAttachedStemBlock(melon, melon::getSeeds, getAttachedStemSettings());
 
-		AliasedBlockItem seeds = new AliasedBlockItem(stem, new FabricItemSettings().group(ResourceMelons.getSeedsGroup()));
-		ResourceMelonSliceItem slice = new ResourceMelonSliceItem(getInfo().resource(), seeds, new Item.Settings().group(ResourceMelons.getMelonSliceGroup()).food(ResourceMelons.melonFoodComponent));
+		AliasedBlockItem seeds = new AliasedBlockItem(stem, new FabricItemSettings().group(RMCommon.getSeedsGroup()));
+		ResourceMelonSliceItem slice = new ResourceMelonSliceItem(new Item.Settings().group(RMCommon.getMelonSliceGroup()).food(RMCommon.melonFoodComponent));
 
-		MelonType type = new MelonType(getInfo().id(), stem, attachedStem, melon, seeds, slice, getInfo().catalyst(), getInfo().colour());
+		MelonType type = new MelonType(getInfo().id(), getInfo().resource(), getInfo().resourceBlock(), stem, attachedStem, melon, seeds, slice, getInfo().catalyst(), getInfo().colour(), getInfo().resourceChanceMultiplier(), getInfo().seedsChanceMultiplier(), getInfo().miningLevel());
 
 		melon.setType(type);
+		slice.setType(type);
 		this.setType(type);
 		return type;
 	}
@@ -54,6 +57,7 @@ public interface MelonTypeBuilder {
 
 	void setType(MelonType type);
 
-	record Info(Identifier id, Item resource, Catalyst catalyst, int colour) {
+	record Info(Identifier id, Item resource, Block resourceBlock, Tag<Block> catalyst, int colour,
+				float resourceChanceMultiplier, float seedsChanceMultiplier, int miningLevel) {
 	}
 }

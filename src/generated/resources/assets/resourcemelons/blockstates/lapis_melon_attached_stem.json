@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "resourcemelons:block/lapis_melon_attached_stem",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "resourcemelons:block/lapis_melon_attached_stem",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "resourcemelons:block/lapis_melon_attached_stem",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "resourcemelons:block/lapis_melon_attached_stem"
+    }
+  }
+}

@@ -18,6 +18,31 @@ repositories {
 	maven { url "https://maven.shedaniel.me/" }
 }
 
+loom {
+	accessWidenerPath = file("src/main/resources/resourcemelons.accesswidener")
+
+	runs {
+		datagenClient {
+			client()
+			name "Data Generation"
+			vmArg "-Dfabric-api.datagen"
+			vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated/resources")}"
+
+			ideConfigGenerated = true
+			runDir "build/datagen"
+			source sourceSets.main
+		}
+	}
+}
+
+sourceSets {
+	main {
+		resources {
+			srcDir "src/generated/resources"
+		}
+	}
+}
+
 dependencies {
 	// Minecraft
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -39,7 +64,6 @@ dependencies {
 
 	// Cloth Config
 	modApi "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}"
-	include "me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}"
 }
 
 java {
@@ -81,12 +105,7 @@ jar {
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
-			artifact(remapJar) {
-				builtBy remapJar
-			}
-			artifact(sourcesJar) {
-				builtBy remapSourcesJar
-			}
+			from components.java
 		}
 	}
 

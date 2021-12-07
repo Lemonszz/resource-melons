@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    "sss",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "resourcemelons:coal_melon_slice"
+    }
+  },
+  "result": {
+    "item": "resourcemelons:coal_melon"
+  }
+}

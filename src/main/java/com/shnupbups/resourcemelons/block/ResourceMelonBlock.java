@@ -16,16 +16,20 @@ public class ResourceMelonBlock extends GourdBlock {
 
 	@Override
 	public StemBlock getStem() {
-		return type.stem();
+		return getType().stem();
 	}
 
 	@Override
 	public AttachedStemBlock getAttachedStem() {
-		return type.attachedStem();
+		return getType().attachedStem();
 	}
 
 	public Item getSeeds() {
-		return type.seeds();
+		return getType().seeds();
+	}
+
+	public MelonType getType() {
+		return type;
 	}
 
 	public void setType(MelonType type) {

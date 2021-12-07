@@ -7,48 +7,62 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import com.shnupbups.resourcemelons.ResourceMelons;
+import com.shnupbups.resourcemelons.RMCommon;
+import com.shnupbups.resourcemelons.core.MelonType;
 
 public class ResourceMelonSliceItem extends Item {
-	private final Item resource;
-	private final Item seed;
+	private MelonType type;
 
-	public ResourceMelonSliceItem(Item resource, Item seed, Settings settings) {
+	public ResourceMelonSliceItem(Settings settings) {
 		super(settings);
-		this.resource = resource;
-		this.seed = seed;
 	}
 
-	public static int getResourceChance() {
-		return ResourceMelons.getConfig().consumption().resourceChance();
+	public static float getBaseResourceChance() {
+		return RMCommon.getConfig().consumption().resourcePercent();
 	}
 
 	public static boolean canDropSeeds() {
-		return ResourceMelons.getConfig().consumption().dropSeeds().enabled();
+		return RMCommon.getConfig().consumption().dropSeeds().enabled();
 	}
 
-	public static int getSeedDropChance() {
-		return ResourceMelons.getConfig().consumption().dropSeeds().value();
+	public static float getBaseSeedsChance() {
+		return RMCommon.getConfig().consumption().dropSeeds().percentage();
+	}
+
+	public float getResourceChance() {
+		return getBaseResourceChance() * getType().resourceChanceMultiplier();
+	}
+
+	public float getSeedsChance() {
+		return getBaseSeedsChance() * getType().seedsChanceMultiplier();
 	}
 
 	public ItemStack getResourceStack() {
-		return new ItemStack(resource);
+		return new ItemStack(getType().resource());
 	}
 
-	public ItemStack getSeedStack() {
-		return new ItemStack(seed);
+	public ItemStack getSeedsStack() {
+		return new ItemStack(getType().seeds());
 	}
 
 	@Override
 	public ItemStack finishUsing(ItemStack stack, World world, LivingEntity livingEntity) {
-		if (world.getRandom().nextInt(getResourceChance()) == 0)
+		if (RMCommon.randomWithPercentage(world.getRandom(), getResourceChance()))
 			spawnStack(world, getResourceStack(), livingEntity.getBlockPos());
-		if (canDropSeeds() && world.getRandom().nextInt(getSeedDropChance()) == 0)
-			spawnStack(world, getSeedStack(), livingEntity.getBlockPos());
+		if (canDropSeeds() && RMCommon.randomWithPercentage(world.getRandom(), getSeedsChance()))
+			spawnStack(world, getSeedsStack(), livingEntity.getBlockPos());
 		return super.finishUsing(stack, world, livingEntity);
 	}
 
 	public void spawnStack(World world, ItemStack stack, BlockPos pos) {
 		world.spawnEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack));
+	}
+
+	public MelonType getType() {
+		return type;
+	}
+
+	public void setType(MelonType type) {
+		this.type = type;
 	}
 }

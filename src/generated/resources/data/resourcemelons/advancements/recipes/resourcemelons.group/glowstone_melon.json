@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "resourcemelons:glowstone_melon"
+    ]
+  },
+  "criteria": {
+    "has_glowstone_melon_slice": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcemelons:glowstone_melon_slice"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "resourcemelons:glowstone_melon"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_glowstone_melon_slice",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "resourcemelons:gold_melon"
+    ]
+  },
+  "criteria": {
+    "has_gold_melon_slice": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcemelons:gold_melon_slice"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "resourcemelons:gold_melon"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_gold_melon_slice",
+      "has_the_recipe"
+    ]
+  ]
+}

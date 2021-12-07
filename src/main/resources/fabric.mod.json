@@ -21,18 +21,28 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.shnupbups.resourcemelons.ResourceMelons"
+      "com.shnupbups.resourcemelons.RMCommon"
 	],
 	"client": [
-      "com.shnupbups.resourcemelons.ResourceMelonsClient"
+      "com.shnupbups.resourcemelons.RMClient"
 	],
     "modmenu": [
-      "com.shnupbups.resourcemelons.ResourceMelonsConfigScreen"
+      "com.shnupbups.resourcemelons.config.RMConfigScreen"
+    ],
+    "rei": [
+      "com.shnupbups.resourcemelons.rei.RMPlugin",
+      "com.shnupbups.resourcemelons.rei.RMClientPlugin"
+    ],
+    "fabric-datagen": [
+      "com.shnupbups.resourcemelons.datagen.RMDatagen"
     ]
   },
 
+  "accessWidener" : "resourcemelons.accesswidener",
+
   "depends": {
     "fabricloader": ">=0.6.1",
-    "fabric": "*"
+    "fabric": "*",
+    "cloth-config": ">=6.0.45"
   }
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    "sss",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "resourcemelons:quartz_melon_slice"
+    }
+  },
+  "result": {
+    "item": "resourcemelons:quartz_melon"
+  }
+}

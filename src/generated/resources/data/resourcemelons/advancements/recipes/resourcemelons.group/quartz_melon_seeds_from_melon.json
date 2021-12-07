@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "resourcemelons:quartz_melon_seeds_from_melon"
+    ]
+  },
+  "criteria": {
+    "has_quartz_melon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "resourcemelons:quartz_melon"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "resourcemelons:quartz_melon_seeds_from_melon"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_quartz_melon",
+      "has_the_recipe"
+    ]
+  ]
+}

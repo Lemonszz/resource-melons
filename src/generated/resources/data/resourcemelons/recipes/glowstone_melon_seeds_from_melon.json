@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "resourcemelons:glowstone_melon"
+    }
+  ],
+  "result": {
+    "item": "resourcemelons:glowstone_melon_seeds"
+  }
+}
