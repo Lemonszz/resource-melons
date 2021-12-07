@@ -1,7 +1,5 @@
 package com.shnupbups.resourcemelons.datagen.model;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;

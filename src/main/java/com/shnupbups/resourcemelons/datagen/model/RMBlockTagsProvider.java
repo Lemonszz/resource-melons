@@ -8,7 +8,6 @@ import net.minecraft.util.Identifier;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager;
 import net.fabricmc.fabric.api.tag.TagFactory;
 
 import com.shnupbups.resourcemelons.RMCommon;
@@ -18,6 +17,16 @@ import com.shnupbups.resourcemelons.misc.RMTags;
 public class RMBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 	public RMBlockTagsProvider(FabricDataGenerator dataGenerator) {
 		super(dataGenerator);
+	}
+
+	public static Tag.Identified<Block> getMiningLevelTag(int miningLevel) {
+		if (miningLevel <= 0) return null;
+		return switch (miningLevel) {
+			case 1 -> BlockTags.NEEDS_STONE_TOOL;
+			case 2 -> BlockTags.NEEDS_IRON_TOOL;
+			case 3 -> BlockTags.NEEDS_DIAMOND_TOOL;
+			default -> TagFactory.BLOCK.create(new Identifier("fabric", "needs_tool_level_" + miningLevel));
+		};
 	}
 
 	@Override
@@ -35,7 +44,7 @@ public class RMBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 			resourceMelonUnattachedStems.add(melonType.stem());
 			resourceMelonAttachedStems.add(melonType.attachedStem());
 			Tag.Identified<Block> miningLevelTag = getMiningLevelTag(melonType.miningLevel());
-			if(miningLevelTag != null) {
+			if (miningLevelTag != null) {
 				getOrCreateTagBuilder(getMiningLevelTag(melonType.miningLevel())).add(melonType.stem(), melonType.attachedStem(), melonType.melon());
 			}
 		}
@@ -72,15 +81,5 @@ public class RMBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 		getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).addTag(RMTags.BlockTags.RESOURCE_MELONS).addTag(RMTags.BlockTags.RESOURCE_MELON_STEMS);
 
 		RMCommon.LOGGER.info("Finished generating block tags!");
-	}
-
-	public static Tag.Identified<Block> getMiningLevelTag(int miningLevel) {
-		if(miningLevel <= 0) return null;
-		return switch(miningLevel) {
-			case 1 -> BlockTags.NEEDS_STONE_TOOL;
-			case 2 -> BlockTags.NEEDS_IRON_TOOL;
-			case 3 -> BlockTags.NEEDS_DIAMOND_TOOL;
-			default -> TagFactory.BLOCK.create(new Identifier("fabric", "needs_tool_level_"+miningLevel));
-		};
 	}
 }

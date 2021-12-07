@@ -22,8 +22,8 @@ public class RMRecipesProvider extends FabricRecipesProvider {
 
 	public static void offerRecipes(MelonType melonType, Consumer<RecipeJsonProvider> exporter) {
 		createSeedsRecipe(melonType).criterion(RecipesProvider.hasItem(melonType.resourceBlock()), RecipesProvider.conditionsFromItem(melonType.resourceBlock())).offerTo(exporter);
-		createAltSeedsRecipe(melonType).criterion(RecipesProvider.hasItem(melonType.resourceBlock()), RecipesProvider.conditionsFromItem(melonType.resourceBlock())).offerTo(exporter, CraftingRecipeJsonFactory.getItemId(melonType.seeds())+"_alt");
-		createSeedsFromMelonRecipe(melonType).criterion(RecipesProvider.hasItem(melonType.melon()), RecipesProvider.conditionsFromItem(melonType.melon())).offerTo(exporter, CraftingRecipeJsonFactory.getItemId(melonType.seeds())+"_from_melon");
+		createAltSeedsRecipe(melonType).criterion(RecipesProvider.hasItem(melonType.resourceBlock()), RecipesProvider.conditionsFromItem(melonType.resourceBlock())).offerTo(exporter, CraftingRecipeJsonFactory.getItemId(melonType.seeds()) + "_alt");
+		createSeedsFromMelonRecipe(melonType).criterion(RecipesProvider.hasItem(melonType.melon()), RecipesProvider.conditionsFromItem(melonType.melon())).offerTo(exporter, CraftingRecipeJsonFactory.getItemId(melonType.seeds()) + "_from_melon");
 		createMelonRecipe(melonType).criterion(RecipesProvider.hasItem(melonType.slice()), RecipesProvider.conditionsFromItem(melonType.slice())).offerTo(exporter);
 	}
 

@@ -1,10 +1,7 @@
 package com.shnupbups.resourcemelons.datagen.model;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.server.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;
-import net.minecraft.item.Items;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
@@ -34,7 +31,7 @@ public class RMBlockLootTablesProvider extends FabricBlockLootTablesProvider {
 
 			addDrop(melonType.stem(), (block) -> BlockLootTableGenerator.cropStemDrops(block, melonType.seeds()));
 			addDrop(melonType.attachedStem(), (block) -> BlockLootTableGenerator.attachedCropStemDrops(block, melonType.seeds()));
-			addDrop(melonType.melon(), (block) -> BlockLootTableGenerator.dropsWithSilkTouch(block, (LootPoolEntry.Builder)BlockLootTableGenerator.applyExplosionDecay(block, ((LeafEntry.Builder) ItemEntry.builder(melonType.slice()).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 7.0f)))).apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE)).apply(LimitCountLootFunction.builder(BoundedIntUnaryOperator.createMax(9))))));
+			addDrop(melonType.melon(), (block) -> BlockLootTableGenerator.dropsWithSilkTouch(block, (LootPoolEntry.Builder) BlockLootTableGenerator.applyExplosionDecay(block, ((LeafEntry.Builder) ItemEntry.builder(melonType.slice()).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 7.0f)))).apply(ApplyBonusLootFunction.uniformBonusCount(Enchantments.FORTUNE)).apply(LimitCountLootFunction.builder(BoundedIntUnaryOperator.createMax(9))))));
 		}
 
 		RMCommon.LOGGER.info("Finished generating block loot tables!");
