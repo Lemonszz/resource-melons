@@ -130,7 +130,7 @@ public class RMCommon implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		loadConfig();
+		if(!isConfigLoaded()) loadConfig();
 
 		for (DefaultMelonTypes melonBuilder : DefaultMelonTypes.values()) {
 			MelonType type = melonBuilder.build();
