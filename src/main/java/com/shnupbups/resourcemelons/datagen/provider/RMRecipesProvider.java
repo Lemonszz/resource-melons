@@ -1,4 +1,4 @@
-package com.shnupbups.resourcemelons.datagen.model;
+package com.shnupbups.resourcemelons.datagen.provider;
 
 import java.util.function.Consumer;
 

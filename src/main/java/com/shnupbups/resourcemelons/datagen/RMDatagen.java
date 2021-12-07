@@ -4,11 +4,11 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
 import com.shnupbups.resourcemelons.RMCommon;
-import com.shnupbups.resourcemelons.datagen.model.RMBlockLootTablesProvider;
-import com.shnupbups.resourcemelons.datagen.model.RMBlockTagsProvider;
-import com.shnupbups.resourcemelons.datagen.model.RMItemTagsProvider;
-import com.shnupbups.resourcemelons.datagen.model.RMModelsProvider;
-import com.shnupbups.resourcemelons.datagen.model.RMRecipesProvider;
+import com.shnupbups.resourcemelons.datagen.provider.RMBlockLootTablesProvider;
+import com.shnupbups.resourcemelons.datagen.provider.RMBlockTagsProvider;
+import com.shnupbups.resourcemelons.datagen.provider.RMItemTagsProvider;
+import com.shnupbups.resourcemelons.datagen.provider.RMModelsProvider;
+import com.shnupbups.resourcemelons.datagen.provider.RMRecipesProvider;
 
 public class RMDatagen implements DataGeneratorEntrypoint {
 	@Override

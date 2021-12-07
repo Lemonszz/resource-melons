@@ -1,4 +1,4 @@
-package com.shnupbups.resourcemelons.datagen.model;
+package com.shnupbups.resourcemelons.datagen.provider;
 
 import net.minecraft.data.server.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;

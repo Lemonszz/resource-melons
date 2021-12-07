@@ -1,4 +1,4 @@
-package com.shnupbups.resourcemelons.datagen.model;
+package com.shnupbups.resourcemelons.datagen.provider;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -45,7 +45,7 @@ public class RMBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 			resourceMelonAttachedStems.add(melonType.attachedStem());
 			Tag.Identified<Block> miningLevelTag = getMiningLevelTag(melonType.miningLevel());
 			if (miningLevelTag != null) {
-				getOrCreateTagBuilder(getMiningLevelTag(melonType.miningLevel())).add(melonType.stem(), melonType.attachedStem(), melonType.melon());
+				getOrCreateTagBuilder(miningLevelTag).add(melonType.stem(), melonType.attachedStem(), melonType.melon());
 			}
 		}
 

@@ -38,7 +38,7 @@ public interface MelonTypeBuilder {
 		ResourceMelonAttachedStemBlock attachedStem = new ResourceMelonAttachedStemBlock(melon, melon::getSeeds, getAttachedStemSettings());
 
 		AliasedBlockItem seeds = new AliasedBlockItem(stem, new FabricItemSettings().group(RMCommon.getSeedsGroup()));
-		ResourceMelonSliceItem slice = new ResourceMelonSliceItem(new Item.Settings().group(RMCommon.getMelonSliceGroup()).food(RMCommon.melonFoodComponent));
+		ResourceMelonSliceItem slice = new ResourceMelonSliceItem(new Item.Settings().group(RMCommon.getMelonSliceGroup()).food(RMCommon.getMelonFoodComponent()));
 
 		MelonType type = new MelonType(getInfo().id(), getInfo().resource(), getInfo().resourceBlock(), stem, attachedStem, melon, seeds, slice, getInfo().catalyst(), getInfo().colour(), getInfo().resourceChanceMultiplier(), getInfo().seedsChanceMultiplier(), getInfo().miningLevel());
 

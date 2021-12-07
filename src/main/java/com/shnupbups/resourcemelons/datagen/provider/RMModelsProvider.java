@@ -1,4 +1,4 @@
-package com.shnupbups.resourcemelons.datagen.model;
+package com.shnupbups.resourcemelons.datagen.provider;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.ItemModelGenerator;
@@ -42,10 +42,13 @@ public class RMModelsProvider extends FabricBlockStateDefinitionProvider {
 	@Override
 	public void generateItemModels(ItemModelGenerator itemModelGenerator) {
 		RMCommon.LOGGER.info("Generating item models...");
+
 		for (MelonType melonType : RMCommon.MELONS) {
 			RMCommon.LOGGER.info("Generating for " + melonType.id());
+
 			itemModelGenerator.register(melonType.slice(), Models.GENERATED);
 		}
+
 		RMCommon.LOGGER.info("Finished generating item models!");
 	}
 
@@ -54,7 +57,7 @@ public class RMModelsProvider extends FabricBlockStateDefinitionProvider {
 		return "Resource Melons BlockState Definition Provider";
 	}
 
-	public final void registerResourceMelonBlockStateModels(BlockStateModelGenerator blockStateModelGenerator, MelonType melonType) {
+	public static void registerResourceMelonBlockStateModels(BlockStateModelGenerator blockStateModelGenerator, MelonType melonType) {
 		blockStateModelGenerator.registerSingleton(melonType.melon(), TexturedModel.CUBE_COLUMN);
 		blockStateModelGenerator.registerParentedItemModel(melonType.melon(), ModelIds.getBlockModelId(melonType.melon()));
 		blockStateModelGenerator.registerItemModel(melonType.stem().asItem());
