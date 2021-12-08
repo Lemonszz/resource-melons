@@ -14,15 +14,15 @@ import com.shnupbups.resourcemelons.misc.RMTags;
 
 public enum DefaultMelonTypes implements MelonTypeBuilder {
 	DIAMOND("diamond", Items.DIAMOND, Blocks.DIAMOND_BLOCK, 0x4AEDD9, RMTags.BlockTags.DIAMOND_MELON_CATALYSTS, MiningLevels.IRON),
-	GOLD("gold", Items.RAW_GOLD, Blocks.GOLD_BLOCK, 0xFDF55F, RMTags.BlockTags.GOLD_MELON_CATALYSTS, MiningLevels.IRON),
+	GOLD("gold", Items.GOLD_INGOT, Blocks.GOLD_BLOCK, 0xFDF55F, RMTags.BlockTags.GOLD_MELON_CATALYSTS, MiningLevels.IRON),
 	EMERALD("emerald", Items.EMERALD, Blocks.EMERALD_BLOCK, 0x41F384, RMTags.BlockTags.EMERALD_MELON_CATALYSTS, MiningLevels.IRON),
-	IRON("iron", Items.RAW_IRON, Blocks.IRON_BLOCK, 0xFEDEC8, RMTags.BlockTags.IRON_MELON_CATALYSTS, MiningLevels.STONE),
+	IRON("iron", Items.IRON_INGOT, Blocks.IRON_BLOCK, 0xFEDEC8, RMTags.BlockTags.IRON_MELON_CATALYSTS, MiningLevels.STONE),
 	LAPIS("lapis", Items.LAPIS_LAZULI, Blocks.LAPIS_BLOCK, 0x7497EA, RMTags.BlockTags.LAPIS_MELON_CATALYSTS, MiningLevels.STONE),
 	REDSTONE("redstone", Items.REDSTONE, Blocks.REDSTONE_BLOCK, 0xFF0000, RMTags.BlockTags.REDSTONE_MELON_CATALYSTS, MiningLevels.IRON),
 	COAL("coal", Items.COAL, Blocks.COAL_BLOCK, 0x2E2E2E, RMTags.BlockTags.COAL_MELON_CATALYSTS),
 	QUARTZ("quartz", Items.QUARTZ, Blocks.QUARTZ_BLOCK, 0xEAE5DE, RMTags.BlockTags.QUARTZ_MELON_CATALYSTS),
 	GLOWSTONE("glowstone", Items.GLOWSTONE_DUST, Blocks.GLOWSTONE, 0xFFEC8E, RMTags.BlockTags.GLOWSTONE_MELON_CATALYSTS),
-	COPPER("copper", Items.RAW_COPPER, Blocks.COPPER_BLOCK, 0xE77C56, RMTags.BlockTags.COPPER_MELON_CATALYSTS, MiningLevels.STONE),
+	COPPER("copper", Items.COPPER_INGOT, Blocks.COPPER_BLOCK, 0xE77C56, RMTags.BlockTags.COPPER_MELON_CATALYSTS, MiningLevels.STONE),
 	AMETHYST("amethyst", Items.AMETHYST_SHARD, Blocks.AMETHYST_BLOCK, 0xB38EF3, RMTags.BlockTags.AMETHYST_MELON_CATALYSTS),
 	NETHERITE("netherite", Items.NETHERITE_SCRAP, Blocks.NETHERITE_BLOCK, 0x654740, RMTags.BlockTags.NETHERITE_MELON_CATALYSTS, MiningLevels.DIAMOND);
 
