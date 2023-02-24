@@ -1,16 +1,16 @@
 package com.shnupbups.resourcemelons.datagen.provider;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.data.client.BlockStateModelGenerator;
+import net.minecraft.data.client.BlockStateVariant;
+import net.minecraft.data.client.BlockStateVariantMap;
 import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.model.BlockStateModelGenerator;
-import net.minecraft.data.client.model.BlockStateVariant;
-import net.minecraft.data.client.model.BlockStateVariantMap;
-import net.minecraft.data.client.model.ModelIds;
-import net.minecraft.data.client.model.Models;
-import net.minecraft.data.client.model.Texture;
-import net.minecraft.data.client.model.TexturedModel;
-import net.minecraft.data.client.model.VariantSettings;
-import net.minecraft.data.client.model.VariantsBlockStateSupplier;
+import net.minecraft.data.client.ModelIds;
+import net.minecraft.data.client.Models;
+import net.minecraft.data.client.TextureMap;
+import net.minecraft.data.client.TexturedModel;
+import net.minecraft.data.client.VariantSettings;
+import net.minecraft.data.client.VariantsBlockStateSupplier;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
@@ -61,8 +61,8 @@ public class RMModelsProvider extends FabricBlockStateDefinitionProvider {
 		blockStateModelGenerator.registerSingleton(melonType.melon(), TexturedModel.CUBE_COLUMN);
 		blockStateModelGenerator.registerParentedItemModel(melonType.melon(), ModelIds.getBlockModelId(melonType.melon()));
 		blockStateModelGenerator.registerItemModel(melonType.stem().asItem());
-		Texture texture = Texture.stem(Blocks.MELON_STEM);
-		Texture texture2 = Texture.stemAndUpper(Blocks.MELON_STEM, Blocks.ATTACHED_MELON_STEM);
+		TextureMap texture = TextureMap.stem(Blocks.MELON_STEM);
+		TextureMap texture2 = TextureMap.stemAndUpper(Blocks.MELON_STEM, Blocks.ATTACHED_MELON_STEM);
 		Identifier identifier = Models.STEM_FRUIT.upload(melonType.attachedStem(), texture2, blockStateModelGenerator.modelCollector);
 		blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(melonType.attachedStem(), BlockStateVariant.create().put(VariantSettings.MODEL, identifier)).coordinate(BlockStateVariantMap.create(Properties.HORIZONTAL_FACING).register(Direction.WEST, BlockStateVariant.create()).register(Direction.SOUTH, BlockStateVariant.create().put(VariantSettings.Y, VariantSettings.Rotation.R270)).register(Direction.NORTH, BlockStateVariant.create().put(VariantSettings.Y, VariantSettings.Rotation.R90)).register(Direction.EAST, BlockStateVariant.create().put(VariantSettings.Y, VariantSettings.Rotation.R180))));
 		blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(melonType.stem()).coordinate(BlockStateVariantMap.create(Properties.AGE_7).register(integer -> BlockStateVariant.create().put(VariantSettings.MODEL, Models.STEM_GROWTH_STAGES[integer].upload(melonType.stem(), texture, blockStateModelGenerator.modelCollector)))));

@@ -1,21 +1,19 @@
 package com.shnupbups.resourcemelons.core;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.tag.Tag;
-import net.minecraft.util.Identifier;
-
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-
 import com.shnupbups.resourcemelons.RMCommon;
 import com.shnupbups.resourcemelons.block.ResourceMelonAttachedStemBlock;
 import com.shnupbups.resourcemelons.block.ResourceMelonBlock;
 import com.shnupbups.resourcemelons.block.ResourceMelonStemBlock;
 import com.shnupbups.resourcemelons.item.ResourceMelonSliceItem;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.item.AliasedBlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.tag.TagKey;
+import net.minecraft.util.Identifier;
 
 public interface MelonTypeBuilder {
 	static FabricBlockSettings getMelonSettings() {
@@ -57,7 +55,7 @@ public interface MelonTypeBuilder {
 
 	void setType(MelonType type);
 
-	record Info(Identifier id, Item resource, Block resourceBlock, Tag<Block> catalyst, int colour,
+	record Info(Identifier id, Item resource, Block resourceBlock, TagKey<Block> catalyst, int colour,
 				float resourceChanceMultiplier, float seedsChanceMultiplier, int miningLevel) {
 	}
 }

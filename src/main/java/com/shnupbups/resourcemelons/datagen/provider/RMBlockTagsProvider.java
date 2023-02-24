@@ -1,31 +1,29 @@
 package com.shnupbups.resourcemelons.datagen.provider;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.tag.Tag;
-import net.minecraft.util.Identifier;
-
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.TagFactory;
-
 import com.shnupbups.resourcemelons.RMCommon;
 import com.shnupbups.resourcemelons.core.MelonType;
 import com.shnupbups.resourcemelons.misc.RMTags;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.tag.BlockTags;
+import net.minecraft.tag.TagKey;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class RMBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 	public RMBlockTagsProvider(FabricDataGenerator dataGenerator) {
 		super(dataGenerator);
 	}
 
-	public static Tag.Identified<Block> getMiningLevelTag(int miningLevel) {
+	public static TagKey<Block> getMiningLevelTag(int miningLevel) {
 		if (miningLevel <= 0) return null;
 		return switch (miningLevel) {
 			case 1 -> BlockTags.NEEDS_STONE_TOOL;
 			case 2 -> BlockTags.NEEDS_IRON_TOOL;
 			case 3 -> BlockTags.NEEDS_DIAMOND_TOOL;
-			default -> TagFactory.BLOCK.create(new Identifier("fabric", "needs_tool_level_" + miningLevel));
+			default -> TagKey.of(Registry.BLOCK_KEY, new Identifier("fabric", "needs_tool_level_" + miningLevel));
 		};
 	}
 
@@ -43,7 +41,7 @@ public class RMBlockTagsProvider extends FabricTagProvider.BlockTagProvider {
 			resourceMelons.add(melonType.melon());
 			resourceMelonUnattachedStems.add(melonType.stem());
 			resourceMelonAttachedStems.add(melonType.attachedStem());
-			Tag.Identified<Block> miningLevelTag = getMiningLevelTag(melonType.miningLevel());
+			TagKey<Block> miningLevelTag = getMiningLevelTag(melonType.miningLevel());
 			if (miningLevelTag != null) {
 				getOrCreateTagBuilder(miningLevelTag).add(melonType.stem(), melonType.attachedStem(), melonType.melon());
 			}
