@@ -1,20 +1,12 @@
 package com.shnupbups.resourcemelons.block;
 
-import java.util.Optional;
-import java.util.Random;
-import java.util.function.Supplier;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FarmlandBlock;
-import net.minecraft.block.GourdBlock;
-import net.minecraft.block.HorizontalFacingBlock;
-import net.minecraft.block.StemBlock;
+import com.shnupbups.resourcemelons.RMCommon;
+import com.shnupbups.resourcemelons.config.GrowthChanceModifiers;
+import net.minecraft.block.*;
 import net.minecraft.item.Item;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.tag.BlockTags;
-import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3i;
@@ -22,14 +14,15 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
-import com.shnupbups.resourcemelons.RMCommon;
-import com.shnupbups.resourcemelons.config.GrowthChanceModifiers;
+import java.util.Optional;
+import java.util.Random;
+import java.util.function.Supplier;
 
 public class ResourceMelonStemBlock extends StemBlock {
 
-	private final Tag<Block> catalyst;
+	private final TagKey<Block> catalyst;
 
-	public ResourceMelonStemBlock(GourdBlock melon, Supplier<Item> pickBlockItem, Tag<Block> catalyst, Settings settings) {
+	public ResourceMelonStemBlock(GourdBlock melon, Supplier<Item> pickBlockItem, TagKey<Block> catalyst, Settings settings) {
 		super(melon, pickBlockItem, settings);
 		this.catalyst = catalyst;
 	}

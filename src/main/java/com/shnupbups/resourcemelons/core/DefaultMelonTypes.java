@@ -1,16 +1,14 @@
 package com.shnupbups.resourcemelons.core;
 
+import com.shnupbups.resourcemelons.RMCommon;
+import com.shnupbups.resourcemelons.misc.RMTags;
+import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
-
-import net.fabricmc.yarn.constants.MiningLevels;
-
-import com.shnupbups.resourcemelons.RMCommon;
-import com.shnupbups.resourcemelons.misc.RMTags;
 
 public enum DefaultMelonTypes implements MelonTypeBuilder {
 	DIAMOND("diamond", Items.DIAMOND, Blocks.DIAMOND_BLOCK, 0x4AEDD9, RMTags.BlockTags.DIAMOND_MELON_CATALYSTS, MiningLevels.IRON),
@@ -29,47 +27,47 @@ public enum DefaultMelonTypes implements MelonTypeBuilder {
 	final Info info;
 	MelonType type;
 
-	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, Tag<Block> catalyst) {
+	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, TagKey<Block> catalyst) {
 		this(RMCommon.id(id), resource, resourceBlock, colour, catalyst, 0);
 	}
 
-	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, Tag<Block> catalyst, float chanceMultiplier) {
+	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, TagKey<Block> catalyst, float chanceMultiplier) {
 		this(RMCommon.id(id), resource, resourceBlock, colour, catalyst, chanceMultiplier, chanceMultiplier, 0);
 	}
 
-	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, Tag<Block> catalyst, float resourceChanceMultiplier, float seedsChanceMultiplier) {
+	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, TagKey<Block> catalyst, float resourceChanceMultiplier, float seedsChanceMultiplier) {
 		this(RMCommon.id(id), resource, resourceBlock, colour, catalyst, resourceChanceMultiplier, seedsChanceMultiplier, 0);
 	}
 
-	DefaultMelonTypes(Identifier id, Item resource, Block resourceBlock, int colour, Tag<Block> catalyst) {
+	DefaultMelonTypes(Identifier id, Item resource, Block resourceBlock, int colour, TagKey<Block> catalyst) {
 		this(id, resource, resourceBlock, colour, catalyst, 1.0f, 0);
 	}
 
-	DefaultMelonTypes(Identifier id, Item resource, Block resourceBlock, int colour, Tag<Block> catalyst, float chanceMultiplier) {
+	DefaultMelonTypes(Identifier id, Item resource, Block resourceBlock, int colour, TagKey<Block> catalyst, float chanceMultiplier) {
 		this(id, resource, resourceBlock, colour, catalyst, chanceMultiplier, chanceMultiplier, 0);
 	}
 
-	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, Tag<Block> catalyst, int miningLevel) {
+	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, TagKey<Block> catalyst, int miningLevel) {
 		this(RMCommon.id(id), resource, resourceBlock, colour, catalyst, miningLevel);
 	}
 
-	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, Tag<Block> catalyst, float chanceMultiplier, int miningLevel) {
+	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, TagKey<Block> catalyst, float chanceMultiplier, int miningLevel) {
 		this(RMCommon.id(id), resource, resourceBlock, colour, catalyst, chanceMultiplier, chanceMultiplier, miningLevel);
 	}
 
-	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, Tag<Block> catalyst, float resourceChanceMultiplier, float seedsChanceMultiplier, int miningLevel) {
+	DefaultMelonTypes(String id, Item resource, Block resourceBlock, int colour, TagKey<Block> catalyst, float resourceChanceMultiplier, float seedsChanceMultiplier, int miningLevel) {
 		this(RMCommon.id(id), resource, resourceBlock, colour, catalyst, resourceChanceMultiplier, seedsChanceMultiplier, miningLevel);
 	}
 
-	DefaultMelonTypes(Identifier id, Item resource, Block resourceBlock, int colour, Tag<Block> catalyst, int miningLevel) {
+	DefaultMelonTypes(Identifier id, Item resource, Block resourceBlock, int colour, TagKey<Block> catalyst, int miningLevel) {
 		this(id, resource, resourceBlock, colour, catalyst, 1.0f, miningLevel);
 	}
 
-	DefaultMelonTypes(Identifier id, Item resource, Block resourceBlock, int colour, Tag<Block> catalyst, float chanceMultiplier, int miningLevel) {
+	DefaultMelonTypes(Identifier id, Item resource, Block resourceBlock, int colour, TagKey<Block> catalyst, float chanceMultiplier, int miningLevel) {
 		this(id, resource, resourceBlock, colour, catalyst, chanceMultiplier, chanceMultiplier, miningLevel);
 	}
 
-	DefaultMelonTypes(Identifier id, Item resource, Block resourceBlock, int colour, Tag<Block> catalyst, float resourceChanceMultiplier, float seedsChanceMultiplier, int miningLevel) {
+	DefaultMelonTypes(Identifier id, Item resource, Block resourceBlock, int colour, TagKey<Block> catalyst, float resourceChanceMultiplier, float seedsChanceMultiplier, int miningLevel) {
 		this.info = new Info(id, resource, resourceBlock, catalyst, colour, resourceChanceMultiplier, seedsChanceMultiplier, miningLevel);
 	}
 
