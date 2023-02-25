@@ -38,8 +38,6 @@
     ]
   },
 
-  "accessWidener" : "resourcemelons.accesswidener",
-
   "depends": {
     "fabricloader": ">=0.14.14",
     "fabric": "*",
